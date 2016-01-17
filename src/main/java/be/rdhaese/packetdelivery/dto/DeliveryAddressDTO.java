@@ -12,17 +12,21 @@ public class DeliveryAddressDTO {
     private String mailbox;
     private String city;
     private String postalCode;
+    private String regionName;
+    private String regionCode;
 
     public DeliveryAddressDTO() {
     }
 
-    public DeliveryAddressDTO(String packetId, String street, String number, String mailbox, String city, String postalCode) {
+    public DeliveryAddressDTO(String packetId, String street, String number, String mailbox, String city, String postalCode, String regionName, String regionCode) {
         this.packetId = packetId;
         this.street = street;
         this.number = number;
         this.mailbox = mailbox;
         this.city = city;
         this.postalCode = postalCode;
+        this.regionName = regionName;
+        this.regionCode = regionCode;
     }
 
     @Override
@@ -37,7 +41,9 @@ public class DeliveryAddressDTO {
         if (number != null ? !number.equals(that.number) : that.number != null) return false;
         if (mailbox != null ? !mailbox.equals(that.mailbox) : that.mailbox != null) return false;
         if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        return !(postalCode != null ? !postalCode.equals(that.postalCode) : that.postalCode != null);
+        if (postalCode != null ? !postalCode.equals(that.postalCode) : that.postalCode != null) return false;
+        if (regionName != null ? !regionName.equals(that.regionName) : that.regionName != null) return false;
+        return !(regionCode != null ? !regionCode.equals(that.regionCode) : that.regionCode != null);
 
     }
 
@@ -49,6 +55,8 @@ public class DeliveryAddressDTO {
         result = 31 * result + (mailbox != null ? mailbox.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + (postalCode != null ? postalCode.hashCode() : 0);
+        result = 31 * result + (regionName != null ? regionName.hashCode() : 0);
+        result = 31 * result + (regionCode != null ? regionCode.hashCode() : 0);
         return result;
     }
 
@@ -98,5 +106,21 @@ public class DeliveryAddressDTO {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 }
