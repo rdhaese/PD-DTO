@@ -6,14 +6,14 @@ package be.rdhaese.packetdelivery.dto;
  * @author Robin D'Haese
  */
 public class LongLatDTO {
-    private double longitude;
-    private double latitude;
+    private Float longitude;
+    private Float latitude;
 
     public LongLatDTO() {
 
     }
 
-    public LongLatDTO(double latitude, double longitude) {
+    public LongLatDTO(Float latitude, Float longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -25,35 +25,32 @@ public class LongLatDTO {
 
         LongLatDTO that = (LongLatDTO) o;
 
-        if (Double.compare(that.longitude, longitude) != 0) return false;
-        return Double.compare(that.latitude, latitude) == 0;
+        if (getLongitude() != null ? !getLongitude().equals(that.getLongitude()) : that.getLongitude() != null)
+            return false;
+        return !(getLatitude() != null ? !getLatitude().equals(that.getLatitude()) : that.getLatitude() != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        temp = Double.doubleToLongBits(longitude);
-        result = (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(latitude);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        int result = getLongitude() != null ? getLongitude().hashCode() : 0;
+        result = 31 * result + (getLatitude() != null ? getLatitude().hashCode() : 0);
         return result;
     }
 
-    public double getLongitude() {
+    public Float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
 
-    public double getLatitude() {
+    public Float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Float latitude) {
         this.latitude = latitude;
     }
 }
