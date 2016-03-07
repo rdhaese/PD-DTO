@@ -1,4 +1,6 @@
-package be.rdhaese.packetdelivery.dto;
+package be.rdhaese.packetdelivery.dto.impl;
+
+import be.rdhaese.packetdelivery.dto.PacketDTOInterface;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.Date;
  *
  * @author Robin D'Haese
  */
-public class PacketDTO implements Serializable {
+public class PacketDTO implements PacketDTOInterface {
 
     //Packet specific properties
     private String packetId;

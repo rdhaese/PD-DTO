@@ -1,6 +1,7 @@
-package be.rdhaese.packetdelivery.dto;
+package be.rdhaese.packetdelivery.dto.impl;
 
-import java.io.Serializable;
+import be.rdhaese.packetdelivery.dto.ContactDetailsInterface;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,14 +10,10 @@ import java.util.Map;
  *
  * @author Robin D'Haese
  */
-public class ContactDetailsDTO implements Serializable {
+public class ContactDetailsDTO implements ContactDetailsInterface {
 
     private String companyName;
-    private String street;
-    private String number;
-    private String mailbox;
-    private String city;
-    private String postalCode;
+    private AddressDTO addressDTO;
     private String aboutText;
     private Map<String, String> phoneNumbers = new HashMap<String, String>();
     private Map<String, String> faxNumbers = new HashMap<String, String>();
@@ -25,13 +22,13 @@ public class ContactDetailsDTO implements Serializable {
     public ContactDetailsDTO() {
     }
 
-    public ContactDetailsDTO(String companyName, String street, String number, String mailbox, String city, String postalCode, String aboutText, Map<String, String> phoneNumbers, Map<String, String> faxNumbers, Map<String, String> emailAddresses) {
+    public ContactDetailsDTO(String street, String number, String mailbox, String city, String postalCode, String aboutText, String companyName, Map<String, String> phoneNumbers, Map<String, String> faxNumbers, Map<String, String> emailAddresses) {
+        this(new AddressDTO(street, number, mailbox, city, postalCode), companyName, aboutText, phoneNumbers, faxNumbers, emailAddresses);
+    }
+
+    public ContactDetailsDTO(AddressDTO addressDTO, String companyName, String aboutText, Map<String, String> phoneNumbers, Map<String, String> faxNumbers, Map<String, String> emailAddresses) {
+        this.addressDTO = addressDTO;
         this.companyName = companyName;
-        this.street = street;
-        this.number = number;
-        this.mailbox = mailbox;
-        this.city = city;
-        this.postalCode = postalCode;
         this.aboutText = aboutText;
         this.phoneNumbers = phoneNumbers;
         this.faxNumbers = faxNumbers;
@@ -98,43 +95,43 @@ public class ContactDetailsDTO implements Serializable {
     }
 
     public String getStreet() {
-        return street;
+        return addressDTO.getStreet();
     }
 
     public void setStreet(String street) {
-        this.street = street;
+        addressDTO.setStreet(street);
     }
 
     public String getNumber() {
-        return number;
+       return addressDTO.getNumber();
     }
 
     public void setNumber(String number) {
-        this.number = number;
+        addressDTO.setNumber(number);
     }
 
     public String getMailbox() {
-        return mailbox;
+       return addressDTO.getMailbox();
     }
 
     public void setMailbox(String mailbox) {
-        this.mailbox = mailbox;
+        addressDTO.setMailbox(mailbox);
     }
 
     public String getCity() {
-        return city;
+        return addressDTO.getCity();
     }
 
     public void setCity(String city) {
-        this.city = city;
+        addressDTO.setCity(city);
     }
 
     public String getPostalCode() {
-        return postalCode;
+        return addressDTO.getPostalCode();
     }
 
     public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+        addressDTO.setPostalCode(postalCode);
     }
 
     public String getAboutText() {
@@ -169,12 +166,4 @@ public class ContactDetailsDTO implements Serializable {
         this.emailAddresses = emailAddresses;
     }
 
-    public static void main(String... args){
-        int i = 0;
-        while (i<3){
-            char c = (char)(73 * (i * (3 * i)));
-            System.out.println(c);
-            i++;
-        }
-    }
 }

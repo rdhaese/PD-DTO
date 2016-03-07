@@ -1,4 +1,6 @@
-package be.rdhaese.packetdelivery.dto;
+package be.rdhaese.packetdelivery.dto.impl;
+
+import be.rdhaese.packetdelivery.dto.RegionDTOInterface;
 
 import java.io.Serializable;import java.lang.Object;import java.lang.Override;import java.lang.String;
 
@@ -7,7 +9,7 @@ import java.io.Serializable;import java.lang.Object;import java.lang.Override;im
  *
  * @author Robin D'Haese
  */
-public class RegionDTO implements Serializable{
+public class RegionDTO implements RegionDTOInterface{
 
     private String name;
     private String code;

@@ -1,4 +1,4 @@
-package be.rdhaese.packetdelivery.dto;
+package be.rdhaese.packetdelivery.dto.impl;
 
 /**
  * Created on 21/02/2016.
