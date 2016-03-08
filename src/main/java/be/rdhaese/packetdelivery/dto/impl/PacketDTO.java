@@ -2,6 +2,7 @@ package be.rdhaese.packetdelivery.dto.impl;
 
 import be.rdhaese.packetdelivery.dto.PacketDTOInterface;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -35,13 +36,13 @@ public class PacketDTO implements PacketDTOInterface {
     private String deliveryMailbox;
     private String deliveryCity;
     private String deliveryPostalCode;
-    private String deliveryRegionName;
+    private String deliverRegionName;
     private String deliveryRegionCode;
 
     public PacketDTO() {
     }
 
-    public PacketDTO(String packetId, String packetStatus, Date statusChangedOn, String clientName, String clientPhone, String clientEmail, String clientStreet, String clientNumber, String clientMailbox, String clientCity, String clientPostalCode, String deliveryName, String deliveryPhone, String deliveryEmail, String deliveryStreet, String deliveryNumber, String deliveryMailbox, String deliveryCity, String deliveryPostalCode, String deliveryRegionName, String deliveryRegionCode) {
+    public PacketDTO(String packetId, String packetStatus, Date statusChangedOn, String clientName, String clientPhone, String clientEmail, String clientStreet, String clientNumber, String clientMailbox, String clientCity, String clientPostalCode, String deliveryName, String deliveryPhone, String deliveryEmail, String deliveryStreet, String deliveryNumber, String deliveryMailbox, String deliveryCity, String deliveryPostalCode, String deliverRegionName, String deliveryRegionCode) {
         this.packetId = packetId;
         this.packetStatus = packetStatus;
         this.statusChangedOn = statusChangedOn;
@@ -61,7 +62,7 @@ public class PacketDTO implements PacketDTOInterface {
         this.deliveryMailbox = deliveryMailbox;
         this.deliveryCity = deliveryCity;
         this.deliveryPostalCode = deliveryPostalCode;
-        this.deliveryRegionName = deliveryRegionName;
+        this.deliverRegionName = deliverRegionName;
         this.deliveryRegionCode = deliveryRegionCode;
     }
 
@@ -110,7 +111,7 @@ public class PacketDTO implements PacketDTOInterface {
             return false;
         if (getDeliveryPostalCode() != null ? !getDeliveryPostalCode().equals(packetDTO.getDeliveryPostalCode()) : packetDTO.getDeliveryPostalCode() != null)
             return false;
-        if (getDeliveryRegionName() != null ? !getDeliveryRegionName().equals(packetDTO.getDeliveryRegionName()) : packetDTO.getDeliveryRegionName() != null)
+        if (getDeliverRegionName() != null ? !getDeliverRegionName().equals(packetDTO.getDeliverRegionName()) : packetDTO.getDeliverRegionName() != null)
             return false;
         return !(getDeliveryRegionCode() != null ? !getDeliveryRegionCode().equals(packetDTO.getDeliveryRegionCode()) : packetDTO.getDeliveryRegionCode() != null);
 
@@ -137,7 +138,7 @@ public class PacketDTO implements PacketDTOInterface {
         result = 31 * result + (getDeliveryMailbox() != null ? getDeliveryMailbox().hashCode() : 0);
         result = 31 * result + (getDeliveryCity() != null ? getDeliveryCity().hashCode() : 0);
         result = 31 * result + (getDeliveryPostalCode() != null ? getDeliveryPostalCode().hashCode() : 0);
-        result = 31 * result + (getDeliveryRegionName() != null ? getDeliveryRegionName().hashCode() : 0);
+        result = 31 * result + (getDeliverRegionName() != null ? getDeliverRegionName().hashCode() : 0);
         result = 31 * result + (getDeliveryRegionCode() != null ? getDeliveryRegionCode().hashCode() : 0);
         return result;
     }
@@ -294,13 +295,13 @@ public class PacketDTO implements PacketDTOInterface {
         this.deliveryPostalCode = deliveryPostalCode;
     }
 
-    public String getDeliveryRegionName() {
+    public String getDeliverRegionName() {
 
-        return deliveryRegionName;
+        return deliverRegionName;
     }
 
-    public void setDeliveryRegionName(String deliveryRegionName) {
-        this.deliveryRegionName = deliveryRegionName;
+    public void setDeliverRegionName(String deliverRegionName) {
+        this.deliverRegionName = deliverRegionName;
     }
 
     public String getDeliveryRegionCode() {
