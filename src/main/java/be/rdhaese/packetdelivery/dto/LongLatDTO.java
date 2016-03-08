@@ -1,13 +1,11 @@
-package be.rdhaese.packetdelivery.dto.impl;
-
-import be.rdhaese.packetdelivery.dto.LongLatDTOInterface;
+package be.rdhaese.packetdelivery.dto;
 
 /**
  * Created on 21/02/2016.
  *
  * @author Robin D'Haese
  */
-public class LongLatDTO implements LongLatDTOInterface {
+public class LongLatDTO {
     private Double longitude;
     private Double latitude;
 
