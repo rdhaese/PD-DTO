@@ -29,6 +29,6 @@ public interface PacketDTOInterface extends Serializable{
      String getDeliveryMailbox();
      String getDeliveryCity();
      String getDeliveryPostalCode();
-     String getDeliverRegionName();
+     String getDeliveryRegionName();
      String getDeliveryRegionCode();
 }
