@@ -34,34 +34,13 @@ public class PacketDTO implements Serializable {
     private String deliveryMailbox;
     private String deliveryCity;
     private String deliveryPostalCode;
-    private String deliveryRegionName;
+    private String deliveryRegionNameNl;
+    private String deliveryRegionNameFr;
+    private String deliveryRegionNameDe;
+    private String deliveryRegionNameEn;
     private String deliveryRegionCode;
 
     public PacketDTO() {
-    }
-
-    public PacketDTO(String packetId, String packetStatus, Date statusChangedOn, String clientName, String clientPhone, String clientEmail, String clientStreet, String clientNumber, String clientMailbox, String clientCity, String clientPostalCode, String deliveryName, String deliveryPhone, String deliveryEmail, String deliveryStreet, String deliveryNumber, String deliveryMailbox, String deliveryCity, String deliveryPostalCode, String deliveryRegionName, String deliveryRegionCode) {
-        this.packetId = packetId;
-        this.packetStatus = packetStatus;
-        this.statusChangedOn = statusChangedOn;
-        this.clientName = clientName;
-        this.clientPhone = clientPhone;
-        this.clientEmail = clientEmail;
-        this.clientStreet = clientStreet;
-        this.clientNumber = clientNumber;
-        this.clientMailbox = clientMailbox;
-        this.clientCity = clientCity;
-        this.clientPostalCode = clientPostalCode;
-        this.deliveryName = deliveryName;
-        this.deliveryPhone = deliveryPhone;
-        this.deliveryEmail = deliveryEmail;
-        this.deliveryStreet = deliveryStreet;
-        this.deliveryNumber = deliveryNumber;
-        this.deliveryMailbox = deliveryMailbox;
-        this.deliveryCity = deliveryCity;
-        this.deliveryPostalCode = deliveryPostalCode;
-        this.deliveryRegionName = deliveryRegionName;
-        this.deliveryRegionCode = deliveryRegionCode;
     }
 
     @Override
@@ -109,7 +88,13 @@ public class PacketDTO implements Serializable {
             return false;
         if (getDeliveryPostalCode() != null ? !getDeliveryPostalCode().equals(packetDTO.getDeliveryPostalCode()) : packetDTO.getDeliveryPostalCode() != null)
             return false;
-        if (getDeliveryRegionName() != null ? !getDeliveryRegionName().equals(packetDTO.getDeliveryRegionName()) : packetDTO.getDeliveryRegionName() != null)
+        if (getDeliveryRegionNameNl() != null ? !getDeliveryRegionNameNl().equals(packetDTO.getDeliveryRegionNameNl()) : packetDTO.getDeliveryRegionNameNl() != null)
+            return false;
+        if (getDeliveryRegionNameFr() != null ? !getDeliveryRegionNameFr().equals(packetDTO.getDeliveryRegionNameFr()) : packetDTO.getDeliveryRegionNameFr() != null)
+            return false;
+        if (getDeliveryRegionNameDe() != null ? !getDeliveryRegionNameDe().equals(packetDTO.getDeliveryRegionNameDe()) : packetDTO.getDeliveryRegionNameDe() != null)
+            return false;
+        if (getDeliveryRegionNameEn() != null ? !getDeliveryRegionNameEn().equals(packetDTO.getDeliveryRegionNameEn()) : packetDTO.getDeliveryRegionNameEn() != null)
             return false;
         return !(getDeliveryRegionCode() != null ? !getDeliveryRegionCode().equals(packetDTO.getDeliveryRegionCode()) : packetDTO.getDeliveryRegionCode() != null);
 
@@ -136,7 +121,10 @@ public class PacketDTO implements Serializable {
         result = 31 * result + (getDeliveryMailbox() != null ? getDeliveryMailbox().hashCode() : 0);
         result = 31 * result + (getDeliveryCity() != null ? getDeliveryCity().hashCode() : 0);
         result = 31 * result + (getDeliveryPostalCode() != null ? getDeliveryPostalCode().hashCode() : 0);
-        result = 31 * result + (getDeliveryRegionName() != null ? getDeliveryRegionName().hashCode() : 0);
+        result = 31 * result + (getDeliveryRegionNameNl() != null ? getDeliveryRegionNameNl().hashCode() : 0);
+        result = 31 * result + (getDeliveryRegionNameFr() != null ? getDeliveryRegionNameFr().hashCode() : 0);
+        result = 31 * result + (getDeliveryRegionNameDe() != null ? getDeliveryRegionNameDe().hashCode() : 0);
+        result = 31 * result + (getDeliveryRegionNameEn() != null ? getDeliveryRegionNameEn().hashCode() : 0);
         result = 31 * result + (getDeliveryRegionCode() != null ? getDeliveryRegionCode().hashCode() : 0);
         return result;
     }
@@ -293,13 +281,36 @@ public class PacketDTO implements Serializable {
         this.deliveryPostalCode = deliveryPostalCode;
     }
 
-    public String getDeliveryRegionName() {
-
-        return deliveryRegionName;
+    public String getDeliveryRegionNameNl() {
+        return deliveryRegionNameNl;
     }
 
-    public void setDeliveryRegionName(String deliveryRegionName) {
-        this.deliveryRegionName = deliveryRegionName;
+    public void setDeliveryRegionNameNl(String deliveryRegionNameNl) {
+        this.deliveryRegionNameNl = deliveryRegionNameNl;
+    }
+
+    public String getDeliveryRegionNameFr() {
+        return deliveryRegionNameFr;
+    }
+
+    public void setDeliveryRegionNameFr(String deliveryRegionNameFr) {
+        this.deliveryRegionNameFr = deliveryRegionNameFr;
+    }
+
+    public String getDeliveryRegionNameDe() {
+        return deliveryRegionNameDe;
+    }
+
+    public void setDeliveryRegionNameDe(String deliveryRegionNameDe) {
+        this.deliveryRegionNameDe = deliveryRegionNameDe;
+    }
+
+    public String getDeliveryRegionNameEn() {
+        return deliveryRegionNameEn;
+    }
+
+    public void setDeliveryRegionNameEn(String deliveryRegionNameEn) {
+        this.deliveryRegionNameEn = deliveryRegionNameEn;
     }
 
     public String getDeliveryRegionCode() {
